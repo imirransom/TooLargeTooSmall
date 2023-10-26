@@ -5,16 +5,27 @@ import java.util.Scanner;
 public class Random {
 
     public static void main(String[] args){
+        //Added the scanner object so I can utilize user inputs
     Scanner scanner = new Scanner(System.in);
-        //declaring fields using to be used with random number
-        //int num1 = 0;
+        //Added  an object to use the scanner method
         System.out.print("Enter you number ");
-        int userNumber = scanner.nextLine();
-        int num2 = 50;
+        int userNumber = scanner.nextInt();
+        //This will be the max the random number will go up to
+        int max = 50;
     //I am declaring the math random method to help produce random numbers
-        int ans = (int) Math.random() * num2;
-        if (1 < ans) {
-            System.out.println();
+        int ans = (int) Math.random() * max;
+
+        //I am starting a conditional
+        while (true){
+            if (userNumber < ans) {
+                System.out.println("Too Small");
+                continue;
+            } else {
+                System.out.println("Too Large");
+                continue;
+            }
         }
+
+
     }
 }
