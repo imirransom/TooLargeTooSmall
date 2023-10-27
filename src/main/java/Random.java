@@ -19,7 +19,8 @@ public class Random {
           If they are incorrect, it will keep them in an infinite loop until they guess correctly*/
         while (true){
             //Added  an object to use the scanner method
-            //moved the input mettg
+            /*moved the input method down inside the conditional while loop, so it would create an infinite loop
+            for the user and not just infinitely print out the strings "Too small" or "Too large"*/
             System.out.print("Enter you number ");
             int guess = scanner.nextInt();
             //If user guess a number too small, then they will need to input another guess
@@ -40,7 +41,8 @@ public class Random {
 
             }
         }
-
+        //This will print out a message to the user and let them know
+        // they guessed correctly and let them know how many guesses they had
         System.out.println("Awesome! You guessed the correct number. The amount of guess you had were " + numberOfGuesses);
     }
 }
