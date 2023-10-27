@@ -14,21 +14,28 @@ public class Random {
         int max = 50;
     //I am declaring the math random method to help produce random numbers. I am saving as the answer variable
         int ans = (int) Math.random() * max;
-
+        int numberOfGuesses = 0;
         /*I am starting a conditional to check whether the user guesses the answer correctly and
           If they are incorrect, it will keep them in an infinite loop until they guess correctly*/
         while (true){
+            //If user guess a number too small, then they will need to input another guess
             if (guess < ans) {
                 System.out.println("Too small");
+                //This will increment the amount of guesses the user puts in
+                numberOfGuesses ++;
                 continue;
             } else if (guess == ans) {
+                //If user guesses correctly, then they will break out of the code
                 System.out.println("That is the correct answer!");
                 break;
             } else {
+                //If user guess a number too big, then they will need to input another guess
                 System.out.println("Too large");
+                numberOfGuesses++;
+                continue;
             }
         }
 
-
+        System.out.println("Awesome! You guessed the correct number. The amount of guess you had were " + numberOfGuesses);
     }
 }
